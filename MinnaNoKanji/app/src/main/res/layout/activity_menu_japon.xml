@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu">
+
+    <RelativeLayout
+        android:layout_width="395dp"
+        android:layout_height="587dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <TextView
+            android:id="@+id/textView18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView16"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:text="Seleccione la sección referente a Japón desea visitar"
+            android:textSize="17sp"/>
+
+        <Button
+            android:textAllCaps="false"
+            android:background="#FFA000"
+            android:textColor="#FFFFFF"
+            android:height="50dp"
+            android:textSize="20sp"
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="130dp"
+            android:text="Curiosidades de Japón" />
+
+        <Button
+            android:textAllCaps="false"
+            android:background="#FFA000"
+            android:textColor="#FFFFFF"
+            android:height="50dp"
+            android:textSize="20sp"
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="240dp"
+            android:text="Convertidor de Moneda" />
+
+        <Button
+            android:textAllCaps="false"
+            android:background="#FFA000"
+            android:textColor="#FFFFFF"
+            android:height="50dp"
+            android:textSize="20sp"
+            android:id="@+id/button6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="350dp"
+            android:text="Embajada de Japón (Cursos)" />
+
+        <Button
+            android:textAllCaps="false"
+            android:background="#FFA000"
+            android:textColor="#FFFFFF"
+            android:height="50dp"
+            android:textSize="20sp"
+            android:id="@+id/button7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="460dp"
+            android:text="Paquetes de Viaje a Japón (...)" />
+
+    </RelativeLayout>
+</android.support.constraint.ConstraintLayout>
