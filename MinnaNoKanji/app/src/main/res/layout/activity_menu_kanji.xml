@@ -14,12 +14,13 @@
 
 
         <LinearLayout
+            android:id="@+id/magic_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
 
             <Button
-                android:id="@+id/button8"
+                android:id="@+id/magic_btn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Lección 1 ↓" />
