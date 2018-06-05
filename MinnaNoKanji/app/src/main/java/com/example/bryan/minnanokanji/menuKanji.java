@@ -14,18 +14,66 @@ public class menuKanji extends AppCompatActivity {
         setContentView(R.layout.activity_menu_kanji);
         getSupportActionBar().setTitle("Kanji 漢字");
 
+
+
+
         //creación del botón de acordeón
-        Button findMagicBtn = (Button) findViewById(R.id.magic_btn);
-        findMagicBtn.setOnClickListener(new View.OnClickListener() {
+        //1
+        final LinearLayout linearLayout1 = (LinearLayout) findViewById(R.id.listaLecciones1);
+        final Button btnLec1 = (Button) findViewById(R.id.part1);
+        btnLec1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                LinearLayout findMagicLl = (LinearLayout) findViewById(R.id.magic_layout);
-                if (findMagicLl.getVisibility() == View.VISIBLE) {
-                    findMagicLl.setVisibility(View.GONE);
-                } else {
-                    findMagicLl.setVisibility(View.VISIBLE);
+            public void onClick(View view) {
+                if (linearLayout1.getVisibility()==View.GONE){
+                    linearLayout1.setVisibility(View.VISIBLE);
+                    btnLec1.setText("Primera Parte ↑");
+
+                }
+                else{
+                    linearLayout1.setVisibility(View.GONE);
+                    btnLec1.setText("Primera Parte ↓");
+                }
+            }
+            });
+
+
+        //2
+
+        final LinearLayout linearLayout2 = (LinearLayout) findViewById(R.id.listaLecciones2);
+        final Button btnLec2 = (Button) findViewById(R.id.part2);
+        btnLec2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (linearLayout2.getVisibility()==View.GONE){
+                    linearLayout2.setVisibility(View.VISIBLE);
+                    btnLec2.setText("Segunda Parte ↑");
+                }
+                else{
+                    linearLayout2.setVisibility(View.GONE);
+                    btnLec2.setText("Segunda Parte ↓");
                 }
             }
         });
-    }
+
+
+
+        //3
+
+        final LinearLayout linearLayout3 = (LinearLayout) findViewById(R.id.listaLecciones3);
+        final Button btnLec3 = (Button) findViewById(R.id.part3);
+        btnLec3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (linearLayout3.getVisibility()==View.GONE){
+                    linearLayout3.setVisibility(View.VISIBLE);
+                    btnLec3.setText("Tercera Parte ↑");
+                }
+                else{
+                    linearLayout3.setVisibility(View.GONE);
+                    btnLec3.setText("Tercera Parte ↓");
+                }
+            }
+        });
+
+        }
 }

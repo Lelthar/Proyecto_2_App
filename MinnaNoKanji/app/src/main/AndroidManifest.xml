@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".menuKanji">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,13 +20,13 @@
             android:name=".acercaDe"
             android:label="@string/title_activity_acerca_de"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".MainActivity"/>
         <activity android:name=".ajustesCuenta" />
         <activity android:name=".Convertidor" />
         <activity android:name=".Registrarse" />
         <activity android:name=".Menu" />
         <activity android:name=".Embajada" />
         <activity android:name=".menuJapon" />
-        <activity android:name=".menuKanji" />
         <activity android:name=".menuKatakana" />
         <activity android:name=".menuHirahana"></activity>
     </application>

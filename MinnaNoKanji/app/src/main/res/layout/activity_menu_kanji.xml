@@ -6,6 +6,171 @@
     android:layout_height="match_parent"
     tools:context=".menuKanji">
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/magic_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/button12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#536dfe"
+                android:text="Introducción"
+                android:textSize="17sp" />
+
+            <Button
+                android:id="@+id/part1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3f51b5"
+                android:text="Primera Parte ↓"
+                android:textColor="#ffffff"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:id="@+id/listaLecciones1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/button11"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C5CAE9"
+                    android:text="Lección 1"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/button13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C5CAE9"
+                    android:text="Lección 2"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/button14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C5CAE9"
+                    android:text="Lección 3"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/part2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3f51b5"
+                android:text="Segunda Parte ↓"
+                android:textColor="#ffffff"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:id="@+id/listaLecciones2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/button21"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C5CAE9"
+                    android:shadowColor="#ffffff"
+                    android:text="Lección 4"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/button23"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C5CAE9"
+                    android:text="Lección 5"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/button24"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C5CAE9"
+                    android:text="Lección 6"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/part3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3f51b5"
+                android:text="Tercera Parte ↓"
+                android:textColor="#ffffff"
+                android:textSize="17sp" />
+
+            <LinearLayout
+                android:id="@+id/listaLecciones3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <Button
+                    android:id="@+id/button31"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C5CAE9"
+                    android:shadowColor="#ffffff"
+                    android:text="Lección 7"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/button33"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C5CAE9"
+                    android:text="Lección 8"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+
+                <Button
+                    android:id="@+id/button34"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="#C5CAE9"
+                    android:text="Lección 9"
+                    android:textAllCaps="false"
+                    android:textSize="15sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
     <RelativeLayout
         android:layout_width="395dp"
         android:layout_height="587dp"
@@ -13,29 +178,5 @@
         tools:layout_editor_absoluteY="8dp">
 
 
-        <LinearLayout
-            android:id="@+id/magic_layout"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <Button
-                android:id="@+id/magic_btn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lección 1 ↓" />
-
-            <Button
-                android:id="@+id/button9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lección 2 ↓" />
-
-            <Button
-                android:id="@+id/button10"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Lección 3 ↓" />
-        </LinearLayout>
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
