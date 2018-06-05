@@ -9,8 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity"/>
-        <activity android:name=".menuKanji"/>
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".menuKanji" />
         <activity
             android:name=".acercaDe"
             android:label="@string/title_activity_acerca_de"
@@ -21,14 +27,9 @@
         <activity android:name=".Menu" />
         <activity android:name=".Embajada" />
         <activity android:name=".menuJapon" />
-        <activity android:name=".menuKatakana">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
-        <activity android:name=".menuHirahana"></activity>
+        <activity android:name=".menuKatakana" />
+        <activity android:name=".menuHirahana" />
+        <activity android:name=".Curiosidades"></activity>
     </application>
 
 </manifest>

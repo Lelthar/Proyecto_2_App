@@ -4,37 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menuKatakana">
+    tools:context=".menuKatakana"
+    android:background="#3f51b5">
 
     <RelativeLayout
         android:layout_width="395dp"
         android:layout_height="587dp"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp">
+        tools:layout_editor_absoluteY="8dp"
+        android:background="#ffffff">
 
-        <TextView
-            android:id="@+id/textView21"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="29dp"
-            android:text="Katakana カタカナ"
-            android:textSize="25sp" />
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="485dp"
-            android:layout_marginTop="100dp">
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="485dp"
+                android:layout_height="match_parent"
                 android:orientation="vertical" >
 
                 <ListView
                     android:layout_width="match_parent"
-                    android:layout_height="485dp" />
+                    android:layout_height="600dp" />
             </LinearLayout>
         </ScrollView>
 
