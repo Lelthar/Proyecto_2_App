@@ -29,7 +29,10 @@
         <activity android:name=".menuJapon" />
         <activity android:name=".menuKatakana" />
         <activity android:name=".menuHirahana" />
-        <activity android:name=".Curiosidades"></activity>
+        <activity android:name=".Curiosidades" />
+        <activity android:name=".ClaseKanji" />
+        <activity android:name=".ClaseKatakana" />
+        <activity android:name=".ClaseHiragana"></activity>
     </application>
 
 </manifest>
