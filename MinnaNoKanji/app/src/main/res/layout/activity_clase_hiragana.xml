@@ -8,11 +8,11 @@
     android:background="#3f51b5">
 
     <RelativeLayout
-        android:layout_width="395dp"
-        android:layout_height="587dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#3f51b5"
         tools:layout_editor_absoluteX="8dp"
-        tools:layout_editor_absoluteY="8dp"
-        android:background="#3f51b5">
+        tools:layout_editor_absoluteY="8dp">
 
         <ScrollView
             android:layout_width="match_parent"
