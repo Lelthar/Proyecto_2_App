@@ -1,4 +1,4 @@
-package tec.fabian.cines35mm;
+package com.example.bryan.minnanokanji;
 
 import android.os.AsyncTask;
 
@@ -59,7 +59,6 @@ public class Conexion extends AsyncTask<String, Void, String>{
                     //xmlString += urlConnection.getHeaderField("access-token");
                     input.close();
                     return jsonResponse.toString();
-
                 }else{
                     return "Error";
                 }
