@@ -7,8 +7,8 @@
     tools:context=".Menu">
 
     <RelativeLayout
-        android:layout_width="395dp"
-        android:layout_height="587dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         tools:layout_editor_absoluteX="8dp"
         tools:layout_editor_absoluteY="8dp">
 
@@ -20,63 +20,63 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:text="Seleccione la sección referente a Japón desea visitar"
-            android:textSize="17sp"/>
+            android:textSize="17sp" />
 
         <Button
-            android:textAllCaps="false"
-            android:background="#FFA000"
-            android:textColor="#FFFFFF"
-            android:height="50dp"
-            android:textSize="20sp"
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="130dp"
-            android:text="Curiosidades de Japón" />
+            android:height="50dp"
+            android:background="#FFA000"
+            android:text="Curiosidades de Japón"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
         <Button
-            android:textAllCaps="false"
-            android:background="#FFA000"
-            android:textColor="#FFFFFF"
-            android:height="50dp"
-            android:textSize="20sp"
             android:id="@+id/button5"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="240dp"
-            android:text="Convertidor de Moneda" />
+            android:height="50dp"
+            android:background="#FFA000"
+            android:text="Convertidor de Moneda"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
         <Button
-            android:textAllCaps="false"
-            android:background="#FFA000"
-            android:textColor="#FFFFFF"
-            android:height="50dp"
-            android:textSize="20sp"
             android:id="@+id/button6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="350dp"
-            android:text="Embajada de Japón (Cursos)" />
+            android:height="50dp"
+            android:background="#FFA000"
+            android:text="Embajada de Japón (Cursos)"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
         <Button
-            android:textAllCaps="false"
-            android:background="#FFA000"
-            android:textColor="#FFFFFF"
-            android:height="50dp"
-            android:textSize="20sp"
             android:id="@+id/button7"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="460dp"
-            android:text="Paquetes de Viaje a Japón (...)" />
+            android:height="50dp"
+            android:background="#FFA000"
+            android:text="Paquetes de Viaje a Japón (...)"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
