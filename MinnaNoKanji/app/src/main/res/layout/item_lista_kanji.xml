@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TableRow
+        android:layout_width="374dp"
+        android:layout_height="257dp">
+
+        <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="374dp"
+            android:layout_height="380dp">
+
+            <ImageView
+                android:id="@+id/imageViewKanji"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                app:srcCompat="@android:color/darker_gray"
+                tools:layout_editor_absoluteX="54dp"
+                tools:layout_editor_absoluteY="5dp" />
+
+            <TextView
+                android:id="@+id/textKanji"
+                android:layout_width="197dp"
+                android:layout_height="42dp"
+                android:textColor="@android:color/black"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="153dp"
+                tools:layout_editor_absoluteY="5dp" />
+
+            <TextView
+                android:id="@+id/textNumeroKanji"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:text="2"
+                android:textAlignment="center"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                tools:layout_editor_absoluteX="6dp"
+                tools:layout_editor_absoluteY="5dp" />
+
+            <ImageView
+                android:id="@+id/imageViewTrazos"
+                android:layout_width="349dp"
+                android:layout_height="72dp"
+                app:srcCompat="@android:color/darker_gray"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="218dp" />
+
+            <TextView
+                android:id="@+id/textKanjiDescripcion"
+                android:layout_width="349dp"
+                android:layout_height="123dp"
+                android:textColor="@android:color/black"
+                android:maxLines = "4"
+                android:scrollbars = "vertical"
+                android:textSize="14sp"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="86dp" />
+
+            <TextView
+                android:id="@+id/textExtra"
+                android:layout_width="348dp"
+                android:layout_height="69dp"
+                android:textColor="@android:color/black"
+                android:textSize="14sp"
+                android:maxLines = "4"
+                android:scrollbars = "vertical"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="301dp" />
+
+        </android.support.constraint.ConstraintLayout>
+    </TableRow>
+</TableLayout>
