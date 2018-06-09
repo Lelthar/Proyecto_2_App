@@ -23,7 +23,7 @@
             android:textSize="25sp" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnKanji"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -37,7 +37,7 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btnKatakana"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -51,7 +51,7 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/btnHiragana"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -65,7 +65,7 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button7"
+            android:id="@+id/btnJapon"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
