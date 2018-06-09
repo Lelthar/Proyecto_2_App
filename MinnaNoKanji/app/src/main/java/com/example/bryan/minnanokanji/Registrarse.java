@@ -352,55 +352,7 @@ public class Registrarse extends AppCompatActivity {
             }
         }
     }
-
-
-    private void uploadImageS3(String nombreImagen){
-        //Agregar el keypublico y local cuando se vaya a correr, borrarlo cuando se vaya a subir a github
-        BasicAWSCredentials credentials = new BasicAWSCredentials("AKIAJ2JAODVAFMKETSGQ", "HC1pWGAD5xnPzfhDs4WEj7aO0AVNneXpYXdoRin1");
-        AmazonS3Client s3Client = new AmazonS3Client(credentials);
-
-        TransferUtility transferUtility =
-                TransferUtility.builder()
-                        .context(getApplicationContext())
-                        .awsConfiguration(AWSMobileClient.getInstance().getConfiguration())
-                        .s3Client(s3Client)
-                        .build();
-
-        // "jsaS3" will be the folder that contains the file
-        TransferObserver uploadObserver =
-                transferUtility.upload("uploads/" + nombreImagen+".jpg",new File(path_portada));
-
-        uploadObserver.setTransferListener(new TransferListener() {
-
-            @Override
-            public void onStateChanged(int id, TransferState state) {
-                if (TransferState.COMPLETED == state) {
-                    // Handle a completed download.
-                }
-            }
-
-            @Override
-            public void onProgressChanged(int id, long bytesCurrent, long bytesTotal) {
-                float percentDonef = ((float)bytesCurrent/(float)bytesTotal) * 100;
-                int percentDone = (int)percentDonef;
-            }
-
-            @Override
-            public void onError(int id, Exception ex) {
-                // Handle errors
-            }
-
-        });
-
-        // If your upload does not trigger the onStateChanged method inside your
-        // TransferListener, you can directly check the transfer state as shown here.
-        if (TransferState.COMPLETED == uploadObserver.getState()) {
-            // Handle a completed upload.
-        }
-    }
-
-
-
+    
     public void uploadWithTransferUtility(String s3PathBucket, String filePathStorage) {
 
         TransferUtility transferUtility =
