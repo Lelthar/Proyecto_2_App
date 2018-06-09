@@ -31,6 +31,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#536dfe"
+                android:onClick="leccion"
                 android:text="Introducción"
                 android:textSize="17sp" />
 
@@ -55,6 +56,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
+                    android:onClick="leccion"
                     android:text="Lección 1"
                     android:textAllCaps="false"
                     android:textSize="15sp" />
@@ -64,6 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
+                    android:onClick="leccion"
                     android:text="Lección 2"
                     android:textAllCaps="false"
                     android:textSize="15sp" />
@@ -73,6 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
+                    android:onClick="leccion"
                     android:text="Lección 3"
                     android:textAllCaps="false"
                     android:textSize="15sp" />
@@ -99,6 +103,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
+                    android:onClick="leccion"
                     android:shadowColor="#ffffff"
                     android:text="Lección 4"
                     android:textAllCaps="false"
@@ -109,6 +114,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
+                    android:onClick="leccion"
                     android:text="Lección 5"
                     android:textAllCaps="false"
                     android:textSize="15sp" />
@@ -118,6 +124,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
+                    android:onClick="leccion"
                     android:text="Lección 6"
                     android:textAllCaps="false"
                     android:textSize="15sp" />
@@ -145,6 +152,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
+                    android:onClick="leccion"
                     android:shadowColor="#ffffff"
                     android:text="Lección 7"
                     android:textAllCaps="false"
@@ -155,6 +163,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
+                    android:onClick="leccion"
                     android:text="Lección 8"
                     android:textAllCaps="false"
                     android:textSize="15sp" />
@@ -164,6 +173,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
+                    android:onClick="leccion"
                     android:text="Lección 9"
                     android:textAllCaps="false"
                     android:textSize="15sp" />

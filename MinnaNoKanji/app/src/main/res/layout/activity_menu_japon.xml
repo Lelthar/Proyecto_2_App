@@ -23,7 +23,7 @@
             android:textSize="17sp" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/btnCuriosidad"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
@@ -37,12 +37,12 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/btnConvertidor"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="240dp"
+            android:layout_marginTop="290dp"
             android:height="50dp"
             android:background="#FFA000"
             android:text="Convertidor de Moneda"
@@ -51,29 +51,15 @@
             android:textSize="20sp" />
 
         <Button
-            android:id="@+id/button6"
+            android:id="@+id/btnEmbajada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="450dp"
             android:height="50dp"
             android:background="#FFA000"
             android:text="Embajada de Japón (Cursos)"
-            android:textAllCaps="false"
-            android:textColor="#FFFFFF"
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/button7"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="460dp"
-            android:height="50dp"
-            android:background="#FFA000"
-            android:text="Paquetes de Viaje a Japón (...)"
             android:textAllCaps="false"
             android:textColor="#FFFFFF"
             android:textSize="20sp" />
