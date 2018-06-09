@@ -42,6 +42,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URISyntaxException;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
@@ -76,9 +77,10 @@ public class Registrarse extends AppCompatActivity {
 
     public static final int MY_PERMISSIONS_REQUEST_READ_EXTERNAL_STORAGE = 123;
 
-    private static final String CARPETA_PRINCIPAL = "misImagenesApp/";
-    private static final String CARPETA_IMAGEN = "imagenes";
+    private static final String CARPETA_PRINCIPAL = "/misImagenesApp/";
+    private static final String CARPETA_IMAGEN = "imagenes/";
     private static final String DIRECTORIO_IMAGEN = CARPETA_PRINCIPAL+CARPETA_IMAGEN;
+
     File fileImagen;
     Bitmap bitmap;
 
@@ -123,9 +125,9 @@ public class Registrarse extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try{
-                    //tomarFoto();
+                    tomarFoto();
                 }catch (Exception e){
-
+                    infoMessageDialog(e.toString());
                 }
 
             }
@@ -157,6 +159,12 @@ public class Registrarse extends AppCompatActivity {
                     if(result.equals("OK")){
                         uploadWithTransferUtility(path_total,path_portada);
                         infoMessageDialog("Se registro con exito.");
+                        editTextCorreo.setText("");
+                        editTextPseudo.setText("");
+                        editTextContra1.setText("");
+                        editTextNombre.setText("");
+                        editTextContra2.setText("");
+                        path_portada="";
                     }else{
                         infoMessageDialog("Problemas con el registro de usuario");
                     }
@@ -191,8 +199,10 @@ public class Registrarse extends AppCompatActivity {
         }
     }
 
-    public void tomarFoto(){
-        File miFile = new File(Environment.getExternalStorageDirectory(),DIRECTORIO_IMAGEN);
+    public void tomarFoto() {
+        String path_carpeta = Environment.getExternalStorageDirectory()+DIRECTORIO_IMAGEN;
+        File miFile = new File(path_carpeta);
+        //infoMessageDialog(path_carpeta);
         boolean isCreada=miFile.exists();
         if(isCreada==false){
             isCreada=miFile.mkdirs();
@@ -201,14 +211,29 @@ public class Registrarse extends AppCompatActivity {
             Long consecutivo = System.currentTimeMillis()/1000;
             String nombre = consecutivo.toString()+".jpg";
 
-            path_portada =Environment.getExternalStorageDirectory()+File.separator+DIRECTORIO_IMAGEN+
-                    File.separator+nombre;
-            infoMessageDialog("asd");
+            path_portada = path_carpeta+nombre;
+
             fileImagen=new File(path_portada);
+            try {
+                fileImagen.createNewFile();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
 
+            Uri uri;
+            //Abre la camara
             Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-            intent.putExtra(MediaStore.EXTRA_OUTPUT,Uri.fromFile(fileImagen));
 
+            //Validación de acuerdo al OS.
+            if (Build.VERSION.SDK_INT >=  Build.VERSION_CODES.N) {
+                uri = Uri.parse(path_portada);
+            } else{
+                uri = Uri.fromFile(new File(path_portada));
+            }
+
+            //Guarda la imagen
+            intent.putExtra(MediaStore.EXTRA_OUTPUT,uri);
+            //Retorna al activity
             startActivityForResult(intent,TOMADA_PICTURE);
         }
     }
@@ -228,6 +253,7 @@ public class Registrarse extends AppCompatActivity {
                     }
                 }
             }
+            /*
             if(requestCode==TOMADA_PICTURE){
                 MediaScannerConnection.scanFile(this, new String[]{path_portada}, null,
                         new MediaScannerConnection.MediaScannerConnectionClient() {
@@ -243,7 +269,8 @@ public class Registrarse extends AppCompatActivity {
                         });
                 bitmap= BitmapFactory.decodeFile(path_portada);
                 //infoMessageDialog(path_portada);
-            }
+
+            }*/
         }
     }
 
@@ -352,7 +379,7 @@ public class Registrarse extends AppCompatActivity {
             }
         }
     }
-    
+
     public void uploadWithTransferUtility(String s3PathBucket, String filePathStorage) {
 
         TransferUtility transferUtility =
