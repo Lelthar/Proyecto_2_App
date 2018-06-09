@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity {
         buttonInit = findViewById(R.id.buttonMinit);
         butttonRegister = findViewById(R.id.buttonMRegister);
 
-        MixpanelAPI mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
-        mixpanel.track("Login",null);
-        mixpanel.flush();
+        //MixpanelAPI mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
+        //mixpanel.track("Login",null);
+        //mixpanel.flush();
 
         butttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
