@@ -1,5 +1,6 @@
 package com.example.bryan.minnanokanji;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -75,5 +76,9 @@ public class menuKanji extends AppCompatActivity {
             }
         });
 
+        }
+        public void leccion(){//implementar algún método para saber el número de parte y lección
+            Intent intent= new Intent(menuKanji.this, ClaseKanji.class);
+            startActivity(intent);
         }
 }
