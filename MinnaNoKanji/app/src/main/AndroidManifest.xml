@@ -35,7 +35,7 @@
         <activity android:name=".ajustesCuenta" />
         <activity android:name=".Convertidor" />
         <activity android:name=".Registrarse" />
-        <activity android:name=".Menu" />
+        <activity android:name=".MenuPrincipal" />
         <activity android:name=".Embajada" />
         <activity android:name=".menuJapon" />
         <activity android:name=".menuKatakana" />

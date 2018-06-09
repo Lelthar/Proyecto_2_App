@@ -8,9 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
-import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -85,7 +82,7 @@ public class MainActivity extends AppCompatActivity {
             String  result = conexion.execute(URL_HOST+USER_LOGIN,"POST",jsonParam.toString()).get();
 
             if(result.equals("OK")) {
-                Intent intent= new Intent(MainActivity.this, Menu.class);
+                Intent intent= new Intent(MainActivity.this, MenuPrincipal.class);
                 startActivity(intent);
             }else{
                 errorMessageDialog("Credenciales incorrectos.");
