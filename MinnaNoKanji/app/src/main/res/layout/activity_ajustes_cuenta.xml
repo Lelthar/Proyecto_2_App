@@ -75,7 +75,7 @@
         tools:layout_editor_absoluteY="59dp" />
 
     <Button
-        android:id="@+id/button34"
+        android:id="@+id/buttonRCamera"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:background="@android:drawable/ic_menu_camera"
@@ -86,7 +86,7 @@
         android:id="@+id/button35"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_alignBottom="@+id/button34"
+        android:layout_alignBottom="@+id/buttonRCamera"
         android:background="@android:drawable/ic_menu_gallery"
         tools:layout_editor_absoluteX="240dp"
         tools:layout_editor_absoluteY="463dp" />

@@ -160,7 +160,7 @@
                     android:textSize="15sp" />
 
                 <Button
-                    android:id="@+id/button34"
+                    android:id="@+id/buttonRCamera"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
