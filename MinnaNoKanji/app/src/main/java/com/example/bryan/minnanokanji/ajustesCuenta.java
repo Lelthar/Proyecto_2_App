@@ -11,4 +11,11 @@ public class ajustesCuenta extends AppCompatActivity {
         setContentView(R.layout.activity_ajustes_cuenta);
         getSupportActionBar().setTitle("Ajustes de Cuenta");
     }
+
+    /*
+    * Este metodo carga los datos del usuario a la interfaz
+    * */
+    private void agregarDatosInterfazUsuario(){
+
+    }
 }
