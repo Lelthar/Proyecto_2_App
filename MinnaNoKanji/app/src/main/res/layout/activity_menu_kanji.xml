@@ -39,7 +39,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#3f51b5"
-                android:text="Primera Parte ↑"
+                android:text="Primera Parte ↓"
                 android:textColor="#ffffff"
                 android:textSize="17sp" />
 
@@ -48,7 +48,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:visibility="visible">
+                android:visibility="gone">
 
                 <Button
                     android:id="@+id/button11"
