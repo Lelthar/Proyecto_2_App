@@ -64,7 +64,7 @@ public class menuHirahana extends AppCompatActivity {
 
     public void enviarLeccion(int posicion){
         Intent intent = new Intent(menuHirahana.this,ClaseHiragana.class);
-        intent.putExtra(POSICION,Integer.toString(posicion));
+        intent.putExtra(POSICION,Integer.toString(posicion++));
         startActivity(intent);
 
     }

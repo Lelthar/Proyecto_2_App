@@ -61,7 +61,7 @@ public class menuKatakana extends AppCompatActivity {
 
     public void enviarLeccion(int posicion){
         Intent intent = new Intent(menuKatakana.this,ClaseKatakana.class);
-        intent.putExtra(POSICION,Integer.toString(posicion));
+        intent.putExtra(POSICION,Integer.toString(posicion++));
         startActivity(intent);
     }
 
