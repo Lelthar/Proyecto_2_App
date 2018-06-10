@@ -12,4 +12,6 @@ public class GlobalClass {
     public static final String USER_LOGIN = "/auth/sign_in";
     //RUTA para registrar usuario
     public static final String USER_REGISTER = "/auth";
+    //Ruta para todos los usuarios
+    public static final String USERS= "/users";
 }

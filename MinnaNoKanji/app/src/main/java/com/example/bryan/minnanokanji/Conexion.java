@@ -22,9 +22,7 @@ public class Conexion extends AsyncTask<String, Void, String>{
             if(!strings[1].equals("GET") && !strings[1].equals("DELETE")){
                 conn.setRequestMethod(strings[1]);
                 conn.setRequestProperty("Content-Type", "application/json;charset=UTF-8");
-                //conn.setRequestProperty("Content-Transfer-Encoding","binary");
                 conn.setRequestProperty("Accept","application/json");
-                //conn.setRequestProperty("Accept-Charset", "UTF-8");
                 conn.setDoOutput(true);
                 conn.setDoInput(true);
 
@@ -56,7 +54,6 @@ public class Conexion extends AsyncTask<String, Void, String>{
                     while ((strLine = input.readLine()) != null) {
                         jsonResponse.append(strLine);
                     }
-                    //xmlString += urlConnection.getHeaderField("access-token");
                     input.close();
                     return jsonResponse.toString();
                 }else{

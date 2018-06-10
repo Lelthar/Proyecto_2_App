@@ -6,100 +6,99 @@
     android:layout_height="match_parent"
     tools:context="com.example.bryan.minnanokanji.ajustesCuenta">
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Correo Electrónico"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="16dp" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/textView13"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Contraseña Anterior"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="132dp" />
+        <TextView
+            android:id="@+id/textViewA18"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView16"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Ajustes de cuenta"
+            android:textSize="25sp" />
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Nueva Contraseña"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="243dp" />
+        <EditText
+            android:id="@+id/editTextAEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textViewA18"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Correo Electrónico"
+            android:inputType="textEmailAddress" />
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Repetir Contraseña"
-        tools:layout_editor_absoluteX="30dp"
-        tools:layout_editor_absoluteY="351dp" />
+        <EditText
+            android:id="@+id/editTextANick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextAEmail"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Nombre"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="173dp" />
+        <EditText
+            android:id="@+id/editTextANickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextANick"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:ems="10"
+            android:hint="Pseudónimo"
+            android:inputType="text" />
 
-    <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
-        android:layout_height="40sp"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="281dp" />
+        <ImageView
+            android:id="@+id/imageViewAImagen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editTextANickname"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:ems="10" />
 
-    <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="392dp" />
+        <Button
+            android:id="@+id/buttonACamera"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignStart="@+id/textViewA18"
+            android:layout_below="@+id/imageViewAImagen"
+            android:layout_marginTop="20dp"
+            android:background="@android:drawable/ic_menu_camera" />
 
-    <EditText
-        android:id="@+id/editText6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        tools:layout_editor_absoluteX="149dp"
-        tools:layout_editor_absoluteY="59dp" />
+        <Button
+            android:id="@+id/buttonAGallery"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignBottom="@+id/buttonACamera"
+            android:layout_alignEnd="@+id/textViewA18"
+            android:background="@android:drawable/ic_menu_gallery" />
 
-    <Button
-        android:id="@+id/buttonRCamera"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:background="@android:drawable/ic_menu_camera"
-        tools:layout_editor_absoluteX="99dp"
-        tools:layout_editor_absoluteY="463dp" />
+        <Button
+            android:id="@+id/buttonASave"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="15dp"
+            android:background="#303f9f"
+            android:text="Guardar"
+            android:textAllCaps="false"
+            android:textColor="#FFFFFF" />
 
-    <Button
-        android:id="@+id/button35"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_alignBottom="@+id/buttonRCamera"
-        android:background="@android:drawable/ic_menu_gallery"
-        tools:layout_editor_absoluteX="240dp"
-        tools:layout_editor_absoluteY="463dp" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="200dp"
-        android:layout_height="40dp"
-        android:background="#303f9f"
-        android:text="Guardar"
-        android:textColor="#FFFFFF"
-        tools:layout_editor_absoluteX="105dp"
-        tools:layout_editor_absoluteY="547dp" />
-
+    </RelativeLayout>
 
 </android.support.constraint.ConstraintLayout>

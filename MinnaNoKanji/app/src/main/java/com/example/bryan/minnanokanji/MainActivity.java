@@ -2,6 +2,7 @@ package com.example.bryan.minnanokanji;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -9,9 +10,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.concurrent.ExecutionException;
 
 import static com.example.bryan.minnanokanji.GlobalClass.URL_HOST;
@@ -82,14 +88,28 @@ public class MainActivity extends AppCompatActivity {
             String  result = conexion.execute(URL_HOST+USER_LOGIN,"POST",jsonParam.toString()).get();
 
             if(result.equals("OK")) {
+                DownLoadTask downLoadTask = new DownLoadTask();
+                String json_user = downLoadTask.execute(correo,pass).get();
                 Intent intent= new Intent(MainActivity.this, MenuPrincipal.class);
+                intent.putExtra("datos",json_user);
                 startActivity(intent);
             }else{
                 errorMessageDialog("Credenciales incorrectos.");
-            }
+           }
         }else{
             errorMessageDialog("Para iniciar sesión debe de llenar todos los espacios.");
         }
+    }
+
+    private JSONObject ObtenerJSon(String JSonDatos, String correo) throws JSONException{
+        JSONArray datos = new JSONArray(JSonDatos);
+        for(int i = 0; i < datos.length(); i++){
+            JSONObject elemento = datos.getJSONObject(i);
+            if(elemento.getString("correo").equals(correo)){
+                return elemento;
+            }
+        }
+        return null;
     }
 
     /**
@@ -120,4 +140,43 @@ public class MainActivity extends AppCompatActivity {
         dialog.show();
     }
 
+    public class DownLoadTask extends AsyncTask<String, Void, String> {
+        protected String doInBackground(String... strings) {
+            String xmlString;
+            HttpURLConnection urlConnection = null;
+            URL url = null;
+
+            try {
+                url = new URL("http://minnanokanjibackend.miwwk5bepd.us-east-1.elasticbeanstalk.com/auth/sign_in");
+                urlConnection = (HttpURLConnection)url.openConnection();
+                urlConnection.setRequestProperty("email",strings[0]);
+                urlConnection.setRequestProperty("password",strings[1]);
+                urlConnection.setRequestProperty("Content-Type","application/json");
+                urlConnection.setRequestMethod("POST");
+                if (urlConnection.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                    StringBuilder xmlResponse = new StringBuilder();
+                    BufferedReader input = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
+                    String strLine = null;
+                    while ((strLine = input.readLine()) != null) {
+                        xmlResponse.append(strLine);
+                    }
+                    xmlString = xmlResponse.toString();
+                    //xmlString += urlConnection.getHeaderField("access-token");
+                    input.close();
+                    return xmlString;
+
+                }else{
+                    return "Usuario Incorrecto";
+                }
+            }
+            catch (Exception e) {
+                return e.toString();
+            }
+            finally {
+                if (urlConnection != null) {
+                    urlConnection.disconnect();
+                }
+            }
+        }
+    }
 }

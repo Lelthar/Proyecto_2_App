@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 public class MenuPrincipal extends AppCompatActivity {
 
+    public String resultado;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,6 +57,8 @@ public class MenuPrincipal extends AppCompatActivity {
             }
         });
 
+        resultado = getIntent().getExtras().getString("datos");
+
     }
 
     @Override
@@ -73,6 +77,7 @@ public class MenuPrincipal extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.Ajustes:
                 intent= new Intent(this, ajustesCuenta.class);
+                intent.putExtra("datos",resultado);
                 startActivity(intent);
                 return true;
             case R.id.Acerca:
