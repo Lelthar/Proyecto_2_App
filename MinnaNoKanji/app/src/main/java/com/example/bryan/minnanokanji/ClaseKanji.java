@@ -40,7 +40,7 @@ public class ClaseKanji extends AppCompatActivity {
 
     private void MostrarLeccion() throws ExecutionException, InterruptedException, JSONException {
         Conexion user_extendeds = new Conexion();
-        String resultado_consulta_hiragana = user_extendeds.execute("http://minnanokanjibackend.miwwk5bepd.us-east-1.elasticbeanstalk.com/leccion_kanjis", "GET").get();
+        String resultado_consulta_hiragana = user_extendeds.execute("http://minnanokanjibackend.miwwk5bepd.us-east-1.elasticbeanstalk.com/leccion_kanjis.json", "GET").get();
         JSONArray datos_hiragana = new JSONArray(resultado_consulta_hiragana);
         List<String> numeros_list = new ArrayList<>();
         List<String> significado_list = new ArrayList<>();

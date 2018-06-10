@@ -41,7 +41,7 @@ public class ClaseKatakana extends AppCompatActivity {
 
     private void MostrarLeccion() throws ExecutionException, InterruptedException, JSONException {
         Conexion user_extendeds = new Conexion();
-        String resultado_consulta_hiragana = user_extendeds.execute("http://minnanokanjibackend.miwwk5bepd.us-east-1.elasticbeanstalk.com/leccion_katakanas", "GET").get();
+        String resultado_consulta_hiragana = user_extendeds.execute("http://minnanokanjibackend.miwwk5bepd.us-east-1.elasticbeanstalk.com/leccion_katakanas.json", "GET").get();
         JSONArray datos_hiragana = new JSONArray(resultado_consulta_hiragana);
         List<String> simbolos_hiragana = new ArrayList<>();
         List<String> imagenes_simbolos = new ArrayList<>();
