@@ -26,8 +26,7 @@
                 <ListView
                     android:id="@+id/listaHiraganas"
                     android:layout_width="match_parent"
-                    android:layout_height="600dp"
-                    text/>
+                    android:layout_height="600dp" />
             </LinearLayout>
         </ScrollView>
 

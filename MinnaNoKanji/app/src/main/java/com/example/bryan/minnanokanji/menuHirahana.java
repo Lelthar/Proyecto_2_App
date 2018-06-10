@@ -24,7 +24,7 @@ public class menuHirahana extends AppCompatActivity {
     public static ArrayList<String> lista_lecciones;
     private ArrayAdapter<String> adapter;
     private ListView listView;
-    public static final String POSICION  = "posicion_cancion";
+    public static final String POSICION  = "posicion_leccion";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

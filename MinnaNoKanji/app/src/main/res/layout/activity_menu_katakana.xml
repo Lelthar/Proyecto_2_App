@@ -25,6 +25,7 @@
                 android:orientation="vertical">
 
                 <ListView
+                    android:id="@+id/listaKatakanas"
                     android:layout_width="match_parent"
                     android:layout_height="600dp" />
             </LinearLayout>
