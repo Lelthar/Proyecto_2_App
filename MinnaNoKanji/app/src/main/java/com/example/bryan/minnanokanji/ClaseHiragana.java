@@ -31,6 +31,10 @@ public class ClaseHiragana extends AppCompatActivity {
         lista_view_leccion = findViewById(R.id.list_view_clase_hiragana);
         Intent i=getIntent();
         numero_leccion = i.getExtras().getString("leccion");
+
+        getSupportActionBar().setTitle("HIRAGANA, Clase No. "+numero_leccion);
+
+
         try {
             MostrarLeccion();
         } catch (ExecutionException e) {

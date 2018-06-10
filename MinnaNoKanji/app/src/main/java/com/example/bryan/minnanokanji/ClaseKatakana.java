@@ -22,11 +22,13 @@ public class ClaseKatakana extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clase_katakana);
-        getSupportActionBar().setTitle("KATAKANA, Clase No. ");
 
         lista_view_leccion = findViewById(R.id.listViewKatakana);
         Intent i=getIntent();
         numero_leccion = i.getExtras().getString("leccion");
+
+        getSupportActionBar().setTitle("KATAKANA, Clase No. "+numero_leccion);
+
         try {
             MostrarLeccion();
         } catch (ExecutionException e) {
@@ -53,7 +55,7 @@ public class ClaseKatakana extends AppCompatActivity {
 
             if(elemento.getString("leccion").equals(this.numero_leccion)){
                 simbolos_hiragana.add(elemento.getString("significado"));
-                imagenes_simbolos.add(elemento.getString("imagen"));
+                imagenes_simbolos.add(elemento.getString("url_imagen"));
             }
         }
 
