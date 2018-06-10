@@ -21,9 +21,7 @@ public class menuKatakana extends AppCompatActivity {
     public static ArrayList<String> lista_lecciones;
     private ArrayAdapter<String> adapter;
     private ListView listView;
-    public static final String POSICION  = "posicion_leccion";
-
-
+    public static final String POSICION  = "leccion";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,7 +59,7 @@ public class menuKatakana extends AppCompatActivity {
 
     public void enviarLeccion(int posicion){
         Intent intent = new Intent(menuKatakana.this,ClaseKatakana.class);
-        intent.putExtra(POSICION,Integer.toString(posicion++));
+        intent.putExtra(POSICION,Integer.toString(++posicion));
         startActivity(intent);
     }
 
@@ -70,9 +68,9 @@ public class menuKatakana extends AppCompatActivity {
     public ArrayList<String> cargarLecciones() throws JSONException, ExecutionException, InterruptedException {
 
         Conexion user_extendeds = new Conexion();
-        String resultado_consulta_hiragana = user_extendeds.execute("http://minnanokanjibackend.miwwk5bepd.us-east-1.elasticbeanstalk.com/katakanas.json", "GET").get();
-        JSONArray datos_hiragana = new JSONArray(resultado_consulta_hiragana);
-        List<String> leccion_hiragana = new ArrayList<>();
+        String resultado_consulta_katakana = user_extendeds.execute("http://minnanokanjibackend.miwwk5bepd.us-east-1.elasticbeanstalk.com/katakanas.json", "GET").get();
+        JSONArray datos_hiragana = new JSONArray(resultado_consulta_katakana);
+        List<String> leccion_katakana = new ArrayList<>();
 
         JSONObject elemento;
 
@@ -80,10 +78,11 @@ public class menuKatakana extends AppCompatActivity {
 
             elemento = datos_hiragana.getJSONObject(i);
 
-            leccion_hiragana.add("Lección No. "+ elemento.getString("leccion"));
+            String msj = ": "+elemento.getString("explicacion");
+            leccion_katakana.add("Lección No. "+ elemento.getString("leccion")+msj);
         }
 
-        return (ArrayList<String>) leccion_hiragana;
+        return (ArrayList<String>) leccion_katakana;
 
 
     }

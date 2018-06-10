@@ -17,6 +17,7 @@ public class ClaseKatakana extends AppCompatActivity {
 
     private String numero_leccion;
     private ListView lista_view_leccion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +25,6 @@ public class ClaseKatakana extends AppCompatActivity {
         getSupportActionBar().setTitle("KATAKANA, Clase No. ");
 
         lista_view_leccion = findViewById(R.id.listViewKatakana);
-
         Intent i=getIntent();
         numero_leccion = i.getExtras().getString("leccion");
         try {

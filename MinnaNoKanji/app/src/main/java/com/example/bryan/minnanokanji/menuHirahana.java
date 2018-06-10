@@ -57,8 +57,6 @@ public class menuHirahana extends AppCompatActivity {
             }
 
         });
-
-
     }
 
 
@@ -83,7 +81,8 @@ public class menuHirahana extends AppCompatActivity {
 
             elemento = datos_hiragana.getJSONObject(i);
 
-            leccion_hiragana.add("Lección No. "+ elemento.getString("leccion"));
+            String msj = ": "+elemento.getString("explicacion");
+            leccion_hiragana.add("Lección No. "+ elemento.getString("leccion")+msj);
         }
 
         return (ArrayList<String>) leccion_hiragana;

@@ -67,6 +67,7 @@ public class ClaseHiragana extends AppCompatActivity {
 
         String[] simbolos_adapter = simbolos_hiragana.toArray(new String[0]);
         String[] imagenes_adapter = imagenes_simbolos.toArray(new String[0]);
+
         CustomListHiragana adapter = new CustomListHiragana(this,simbolos_adapter,imagenes_adapter);
 
         if(adapter != null){
