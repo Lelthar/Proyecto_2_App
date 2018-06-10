@@ -16,42 +16,24 @@
 
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="95dp"
+            android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:background="#ffffff">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <EditText
-                    android:id="@+id/editText11"
-                    android:layout_width="match_parent"
-                    android:layout_height="295dp"
-                    android:ems="10"
-                    android:inputType="textMultiLine" />
-            </LinearLayout>
         </ScrollView>
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="480dp"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="110dp"
-            android:background="#ffffff">
+            android:layout_height="match_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:orientation="vertical">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <ListView
-                    android:id="@+id/list_view_clase_hiragana"
-                    android:layout_width="match_parent"
-                    android:layout_height="480dp" />
-            </LinearLayout>
-        </ScrollView>
+            <ListView
+                android:id="@+id/list_view_clase_hiragana"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

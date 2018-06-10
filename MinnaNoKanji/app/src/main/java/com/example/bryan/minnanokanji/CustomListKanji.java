@@ -26,7 +26,7 @@ public class CustomListKanji extends ArrayAdapter{
     private String[] Extra;
 
     public CustomListKanji(Activity context,String[] Numeros,String[] Significado,String[] ImagenKanji,String[] ImagenTrazos,String[] Explicacion,String[] Extra){
-        super(context, R.layout.item_lista_kanji);
+        super(context, R.layout.item_lista_kanji,Numeros);
         this.context = context;
 
         this.Numeros = Numeros;
@@ -58,6 +58,13 @@ public class CustomListKanji extends ArrayAdapter{
         lbExplicacion.setMovementMethod(new ScrollingMovementMethod());
         lbExtra.setText(Extra[position]);
         lbExtra.setMovementMethod(new ScrollingMovementMethod());
+
+        lbNumero.setTag(position);
+        lbSignificado.setTag(position);
+        lbExplicacion.setTag(position);
+        lbExtra.setTag(position);
+        imageViewSimbolo.setTag(position);
+        imageViewTrazos.setTag(position);
 
         if (!TextUtils.isEmpty(this.ImagenKanji[position])) {
             Picasso.with(this.getContext()).load(this.ImagenKanji[position]).into(imageViewSimbolo);

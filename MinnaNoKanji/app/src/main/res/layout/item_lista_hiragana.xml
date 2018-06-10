@@ -17,9 +17,12 @@
                 android:id="@+id/imageViewHiragana"
                 android:layout_width="180dp"
                 android:layout_height="180dp"
-                app:srcCompat="@android:color/darker_gray"
-                tools:layout_editor_absoluteX="6dp"
-                tools:layout_editor_absoluteY="5dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/textView21"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@android:color/darker_gray" />
 
             <TextView
                 android:id="@+id/textView21"
@@ -28,8 +31,11 @@
                 android:text="Romaji:"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
-                tools:layout_editor_absoluteX="210dp"
-                tools:layout_editor_absoluteY="45dp" />
+                app:layout_constraintBottom_toTopOf="@+id/textHiragana"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/imageViewHiragana"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:id="@+id/textHiragana"
@@ -38,8 +44,11 @@
                 android:textColor="@android:color/black"
                 android:textSize="24sp"
                 android:textStyle="bold"
-                tools:layout_editor_absoluteX="210dp"
-                tools:layout_editor_absoluteY="90dp" />
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.567"
+                app:layout_constraintStart_toEndOf="@+id/imageViewHiragana"
+                app:layout_constraintTop_toBottomOf="@+id/textView21" />
         </android.support.constraint.ConstraintLayout>
     </TableRow>
 </TableLayout>

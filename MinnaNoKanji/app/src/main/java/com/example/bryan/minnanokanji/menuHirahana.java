@@ -24,7 +24,7 @@ public class menuHirahana extends AppCompatActivity {
     public static ArrayList<String> lista_lecciones;
     private ArrayAdapter<String> adapter;
     private ListView listView;
-    public static final String POSICION  = "posicion_leccion";
+    public static final String POSICION  = "leccion";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,7 +64,7 @@ public class menuHirahana extends AppCompatActivity {
 
     public void enviarLeccion(int posicion){
         Intent intent = new Intent(menuHirahana.this,ClaseHiragana.class);
-        intent.putExtra(POSICION,Integer.toString(posicion++));
+        intent.putExtra(POSICION,Integer.toString(++posicion));
         startActivity(intent);
 
     }

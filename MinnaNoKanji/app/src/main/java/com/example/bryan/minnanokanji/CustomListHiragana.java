@@ -21,7 +21,7 @@ public class CustomListHiragana extends ArrayAdapter{
     private String[] Imagenes;
 
     public CustomListHiragana(Activity context,String[] Simbolos,String[] Imagenes){
-        super(context, R.layout.item_lista_hiragana);
+        super(context, R.layout.item_lista_hiragana,Simbolos);
         this.context = context;
         this.Simbolos = Simbolos;
         this.Imagenes = Imagenes;
@@ -38,6 +38,9 @@ public class CustomListHiragana extends ArrayAdapter{
         ImageView imageViewSimbolo = rowView.findViewById(R.id.imageViewHiragana);
 
         lbRomaji.setText(Simbolos[position]);
+
+        lbRomaji.setTag(position);
+        imageViewSimbolo.setTag(position);
 
         if (!TextUtils.isEmpty(this.Imagenes[position])) {
             Picasso.with(this.getContext()).load(this.Imagenes[position]).into(imageViewSimbolo);
