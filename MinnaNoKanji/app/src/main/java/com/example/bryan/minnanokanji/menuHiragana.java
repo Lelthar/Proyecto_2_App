@@ -1,9 +1,6 @@
 package com.example.bryan.minnanokanji;
 
 import android.content.Intent;
-import android.database.Cursor;
-import android.net.Uri;
-import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -19,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
-public class menuHirahana extends AppCompatActivity {
+public class menuHiragana extends AppCompatActivity {
 
     public static ArrayList<String> lista_lecciones;
     private ArrayAdapter<String> adapter;
@@ -61,7 +58,7 @@ public class menuHirahana extends AppCompatActivity {
 
 
     public void enviarLeccion(int posicion){
-        Intent intent = new Intent(menuHirahana.this,ClaseHiragana.class);
+        Intent intent = new Intent(menuHiragana.this,ClaseHiragana.class);
         intent.putExtra(POSICION,Integer.toString(++posicion));
         startActivity(intent);
 

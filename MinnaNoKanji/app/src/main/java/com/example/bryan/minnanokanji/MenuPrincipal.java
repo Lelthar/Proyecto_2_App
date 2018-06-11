@@ -1,14 +1,12 @@
 package com.example.bryan.minnanokanji;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 public class MenuPrincipal extends AppCompatActivity {
 
@@ -44,7 +42,7 @@ public class MenuPrincipal extends AppCompatActivity {
         btnHiragana.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(MenuPrincipal.this, menuHirahana.class);
+                Intent intent= new Intent(MenuPrincipal.this, menuHiragana.class);
                 startActivity(intent);
             }
         });
