@@ -24,6 +24,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.amazonaws.mobile.client.AWSMobileClient;
@@ -32,6 +33,7 @@ import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferState;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -58,6 +60,7 @@ public class ajustesCuenta extends AppCompatActivity {
     private Button buttonGaleria;
     private Button buttonCamara;
     private Conexion conexion;
+    private ImageView imagenPers;
 
     private Uri imagenUri;
     private int intentLlamada;
@@ -92,6 +95,7 @@ public class ajustesCuenta extends AppCompatActivity {
         buttonGuardar = findViewById(R.id.buttonASave);
         buttonGaleria = findViewById(R.id.buttonAGallery);
         buttonCamara = findViewById(R.id.buttonACamera);
+        imagenPers = findViewById(R.id.imageViewAImagen);
 
         buttonGuardar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -141,7 +145,12 @@ public class ajustesCuenta extends AppCompatActivity {
             editTextPseudo.setText(data.getString("nickname"));
             String path_image = data.getString("image");
             ID_user=data.getString("id");
+            String url_imagen = data.getString("image");
+            //infoMessageDialog(url_imagen);
+            Picasso.with(getApplicationContext()).load(url_imagen).into(imagenPers);
+
         } catch (JSONException e) {
+            infoMessageDialog(e.toString());
             e.printStackTrace();
         }
     }
