@@ -37,6 +37,7 @@ import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferState;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -81,6 +82,7 @@ public class Registrarse extends AppCompatActivity {
     private static final String CARPETA_IMAGEN = "imagenes/";
     private static final String DIRECTORIO_IMAGEN = CARPETA_PRINCIPAL+CARPETA_IMAGEN;
 
+    private MixpanelAPI mixpanel; //Objeto de mixpanel
     File fileImagen;
     Bitmap bitmap;
 
@@ -89,6 +91,10 @@ public class Registrarse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
+
+        mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
+        mixpanel.track("Ventana Registro",null); //Realiza la actividad de mixpanel
+        mixpanel.flush();
         AWSMobileClient.getInstance().initialize(this).execute();
         editTextCorreo = findViewById(R.id.editTextREmail);
         editTextNombre = findViewById(R.id.editTextRNick);
@@ -157,6 +163,9 @@ public class Registrarse extends AppCompatActivity {
 
                     String  result = conexion.execute(URL_HOST+USER_REGISTER,"POST",jsonParam.toString()).get();
                     if(result.equals("OK")){
+                        mixpanel.track("Realiza registro existoso",null); //Realiza la actividad de mixpanel
+                        mixpanel.flush();
+
                         uploadWithTransferUtility(path_total,path_portada);
                         infoMessageDialog("Se registro con exito.");
                         editTextCorreo.setText("");
