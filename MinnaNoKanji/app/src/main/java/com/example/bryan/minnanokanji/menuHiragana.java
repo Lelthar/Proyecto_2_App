@@ -71,8 +71,8 @@ public class menuHiragana extends AppCompatActivity {
     public void enviarLeccion(int posicion){
         Intent intent = new Intent(menuHiragana.this,ClaseHiragana.class);
         intent.putExtra(POSICION,Integer.toString(++posicion));
-        //mixpanel.track("Entra a una leccion de Hiragana",null); //Realiza la actividad de mixpanel
-        //mixpanel.flush();
+        mixpanel.track("Entra a una leccion de Hiragana",null); //Realiza la actividad de mixpanel
+        mixpanel.flush();
         startActivity(intent);
 
     }

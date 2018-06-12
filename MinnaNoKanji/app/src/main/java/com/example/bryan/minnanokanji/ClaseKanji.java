@@ -1,6 +1,8 @@
 package com.example.bryan.minnanokanji;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.ListView;
@@ -12,6 +14,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -29,17 +32,20 @@ public class ClaseKanji extends AppCompatActivity {
 
         Fabric.with(this, new Crashlytics());
 
-        lista_view_leccion = findViewById(R.id.listViewKatakana);
+        lista_view_leccion = findViewById(R.id.listViewKanjiClase);
 
         Intent i=getIntent();
         numero_leccion = i.getExtras().getString("leccion");
         try {
             MostrarLeccion();
         } catch (ExecutionException e) {
+            infoMessageDialog(e.toString());
             e.printStackTrace();
         } catch (InterruptedException e) {
+            infoMessageDialog(e.toString());
             e.printStackTrace();
         } catch (JSONException e) {
+            infoMessageDialog(e.toString());
             e.printStackTrace();
         }
 
@@ -67,7 +73,12 @@ public class ClaseKanji extends AppCompatActivity {
                 imagen_kanji_list.add(elemento.getString("imagen_kanji"));
                 imagen_trazos_list.add(elemento.getString("imagen_trazos"));
                 explicacion_list.add(elemento.getString("explicacion"));
-                extra_list.add(elemento.getString("extra"));
+                if(!elemento.getString("extra").isEmpty()){
+                    extra_list.add(elemento.getString("extra"));
+                }else{
+                    extra_list.add(" ");
+                }
+
             }
         }
 
@@ -79,9 +90,28 @@ public class ClaseKanji extends AppCompatActivity {
         String[] extra_adapter = extra_list.toArray(new String[0]);
 
         CustomListKanji adapter = new CustomListKanji(this,numeros_adapter,significado_adapter,imagen_kanji_adapter,imagen_trazos_adapter,explicacion_adapter,extra_adapter);
+        try {
 
-        if(adapter != null){
-            lista_view_leccion.setAdapter(adapter);
+            if(adapter != null){
+                lista_view_leccion.setAdapter(adapter);
+            }
+        } catch (Exception e) {
+            infoMessageDialog(e.toString());
+            e.printStackTrace();
         }
+
+    }
+
+    /**
+     * Cuadro de diálogo para mensajes de información.
+     * @param message
+     */
+    private void infoMessageDialog(String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this).setIcon(R.drawable.ic_img_diag_info_icon)
+                .setMessage(message).setTitle("Información").setPositiveButton("Aceptar",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) { return; }
+                });
+        AlertDialog dialog = builder.create();
+        dialog.show();
     }
 }

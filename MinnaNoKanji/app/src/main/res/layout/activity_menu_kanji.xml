@@ -51,32 +51,10 @@
                 android:orientation="vertical"
                 android:visibility="gone">
 
-                <Button
-                    android:id="@+id/buttonLecc1"
+                <ListView
+                    android:id="@+id/listaParte1"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#C5CAE9"
-                    android:text="Lección 1"
-                    android:textAllCaps="false"
-                    android:textSize="15sp" />
-
-                <Button
-                    android:id="@+id/buttonLecc2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#C5CAE9"
-                    android:text="Lección 2"
-                    android:textAllCaps="false"
-                    android:textSize="15sp" />
-
-                <Button
-                    android:id="@+id/buttonLecc3"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="#C5CAE9"
-                    android:text="Lección 3"
-                    android:textAllCaps="false"
-                    android:textSize="15sp" />
+                    android:layout_height="match_parent" />
             </LinearLayout>
 
             <Button
