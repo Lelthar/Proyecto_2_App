@@ -42,7 +42,7 @@ public class menuJapon extends AppCompatActivity {
         btnEmbajada.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent= new Intent(menuJapon.this, Embajada.class);
+                Intent intent= new Intent(menuJapon.this, WebPage.class);
                 startActivity(intent);
             }
         });

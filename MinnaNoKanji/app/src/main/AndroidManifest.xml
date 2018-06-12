@@ -43,6 +43,8 @@
         <activity android:name=".ClaseKanji" />
         <activity android:name=".ClaseKatakana" />
         <activity android:name=".ClaseHiragana" />
+        <activity android:name=".WebPage" />
+
     </application>
 
 </manifest>
