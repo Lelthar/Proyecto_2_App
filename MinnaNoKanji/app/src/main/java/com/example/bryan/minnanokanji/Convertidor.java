@@ -11,6 +11,8 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,11 +44,16 @@ public class Convertidor extends AppCompatActivity {
     double valor_yen;
     private Conexion conexion;
     private String resultadoJson;
+    private MixpanelAPI mixpanel;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_convertidor);
         getSupportActionBar().setTitle("Convertidor de Monedas");
+
+        mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
+        mixpanel.track("Ventana de Convertidor de monedas",null); //Realiza la actividad de mixpanel
+        mixpanel.flush();
 
         valor_dolar = 0;
         valor_yen = 0;
@@ -162,18 +169,22 @@ public class Convertidor extends AppCompatActivity {
 
         if(!monedaConvertir.isEmpty()){
             if(dolarestocolones.isChecked()){
+                mixpanel.track("Realiza una conversion de moneda de Yenes a Colones",null); //Realiza la actividad de mixpanel
+                mixpanel.flush();
                 double valor_grados_numerico = Double.parseDouble(monedaConvertir) / valor_yen * valor_dolar;
                 TextView salida_textview = findViewById(R.id.resultadoText);
                 String mostrar = String.format("₡%.4f", valor_grados_numerico);
                 salida_textview.setText(mostrar);
-                Toast.makeText(this,mostrar,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this,mostrar,Toast.LENGTH_SHORT).show();
 
             }else if(colonestodolares.isChecked()){
+                mixpanel.track("Realiza una conversion de moneda de Colones a Yenes",null); //Realiza la actividad de mixpanel
+                mixpanel.flush();
                 double valor_grados_numerico = (Double.parseDouble(monedaConvertir)) / valor_dolar * valor_yen;
                 TextView salida_textview = findViewById(R.id.resultadoText);
                 String mostrar = String.format("¥%.4f", valor_grados_numerico);
                 salida_textview.setText(mostrar);
-                Toast.makeText(this,mostrar,Toast.LENGTH_SHORT).show();
+                //Toast.makeText(this,mostrar,Toast.LENGTH_SHORT).show();
             }else{
                 Toast.makeText(this,"Seleccione el tipo de conversión",Toast.LENGTH_SHORT).show();
             }

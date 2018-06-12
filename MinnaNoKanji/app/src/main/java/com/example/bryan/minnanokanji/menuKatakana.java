@@ -8,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -22,6 +24,7 @@ public class menuKatakana extends AppCompatActivity {
     private ArrayAdapter<String> adapter;
     private ListView listView;
     public static final String POSICION  = "leccion";
+    private MixpanelAPI mixpanel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +32,9 @@ public class menuKatakana extends AppCompatActivity {
         setContentView(R.layout.activity_menu_katakana);
         getSupportActionBar().setTitle("Katakana カタカナ");
 
+        mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
+        mixpanel.track("Ventana de lecciones de Katakana",null); //Realiza la actividad de mixpanel
+        mixpanel.flush();
 
         listView = findViewById(R.id.listaKatakanas);
 
@@ -60,6 +66,8 @@ public class menuKatakana extends AppCompatActivity {
     public void enviarLeccion(int posicion){
         Intent intent = new Intent(menuKatakana.this,ClaseKatakana.class);
         intent.putExtra(POSICION,Integer.toString(++posicion));
+        mixpanel.track("Entra a una leccion de Katakana",null); //Realiza la actividad de mixpanel
+        mixpanel.flush();
         startActivity(intent);
     }
 

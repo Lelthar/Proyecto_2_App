@@ -10,6 +10,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     public Button buttonInit;
     public Button butttonRegister;
     public Conexion conexion;
+    private MixpanelAPI mixpanel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,9 +45,9 @@ public class MainActivity extends AppCompatActivity {
         buttonInit = findViewById(R.id.buttonMinit);
         butttonRegister = findViewById(R.id.buttonMRegister);
 
-        //MixpanelAPI mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
-        //mixpanel.track("Login",null);
-        //mixpanel.flush();
+        mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
+        mixpanel.track("Ventana Login",null);
+        mixpanel.flush();
 
         butttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,6 +91,8 @@ public class MainActivity extends AppCompatActivity {
             String  result = conexion.execute(URL_HOST+USER_LOGIN,"POST",jsonParam.toString()).get();
 
             if(result.equals("OK")) {
+                mixpanel.track("Realiza login existoso",null);
+                mixpanel.flush();
                 DownLoadTask downLoadTask = new DownLoadTask();
                 String json_user = downLoadTask.execute(correo,pass).get();
                 Intent intent= new Intent(MainActivity.this, MenuPrincipal.class);

@@ -7,14 +7,19 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
 public class menuKanji extends AppCompatActivity {
 
+    private MixpanelAPI mixpanel; //Objeto de mixpanel
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_kanji);
         getSupportActionBar().setTitle("Kanji 漢字");
-
+        mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
+        mixpanel.track("Ventana de lecciones de Kanji",null); //Realiza la actividad de mixpanel
+        mixpanel.flush();
 
 
 
