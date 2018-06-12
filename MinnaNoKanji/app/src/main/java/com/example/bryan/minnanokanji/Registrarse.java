@@ -37,6 +37,7 @@ import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferState;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.crashlytics.android.Crashlytics;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 import org.json.JSONException;
@@ -48,6 +49,8 @@ import java.net.URISyntaxException;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import io.fabric.sdk.android.Fabric;
 
 import static com.example.bryan.minnanokanji.GlobalClass.PATH_S3;
 import static com.example.bryan.minnanokanji.GlobalClass.URL_HOST;
@@ -91,6 +94,8 @@ public class Registrarse extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
+
+        Fabric.with(this, new Crashlytics());
 
         mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
         mixpanel.track("Ventana Registro",null); //Realiza la actividad de mixpanel

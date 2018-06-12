@@ -7,7 +7,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
 
+import com.crashlytics.android.Crashlytics;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
+import io.fabric.sdk.android.Fabric;
 
 public class menuKanji extends AppCompatActivity {
 
@@ -17,6 +20,7 @@ public class menuKanji extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_kanji);
         getSupportActionBar().setTitle("Kanji 漢字");
+        Fabric.with(this, new Crashlytics());
         mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
         mixpanel.track("Ventana de lecciones de Kanji",null); //Realiza la actividad de mixpanel
         mixpanel.flush();

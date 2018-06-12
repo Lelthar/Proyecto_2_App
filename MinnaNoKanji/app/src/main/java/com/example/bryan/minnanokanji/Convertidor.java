@@ -11,6 +11,7 @@ import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 import org.json.JSONArray;
@@ -38,6 +39,8 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
+import io.fabric.sdk.android.Fabric;
+
 public class Convertidor extends AppCompatActivity {
     private SoapPrimitive resultadoXML;
     double valor_dolar;
@@ -50,6 +53,8 @@ public class Convertidor extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_convertidor);
         getSupportActionBar().setTitle("Convertidor de Monedas");
+
+        Fabric.with(this, new Crashlytics());
 
         mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
         mixpanel.track("Ventana de Convertidor de monedas",null); //Realiza la actividad de mixpanel

@@ -8,6 +8,10 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
+import com.crashlytics.android.Crashlytics;
+
+import io.fabric.sdk.android.Fabric;
+
 public class MenuPrincipal extends AppCompatActivity {
 
     public String resultado;
@@ -16,6 +20,8 @@ public class MenuPrincipal extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
+
+        Fabric.with(this, new Crashlytics());
 
         Button btnKanji = (Button) findViewById(R.id.btnKanji);
         Button btnKatakana = (Button) findViewById(R.id.btnKatakana);

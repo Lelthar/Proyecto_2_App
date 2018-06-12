@@ -8,6 +8,8 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -16,6 +18,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+
+import io.fabric.sdk.android.Fabric;
 
 public class ClaseHiragana extends AppCompatActivity {
 
@@ -27,6 +31,8 @@ public class ClaseHiragana extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_clase_hiragana);
         getSupportActionBar().setTitle("HIRAGANA, Clase No. ");
+
+        Fabric.with(this, new Crashlytics());
 
         lista_view_leccion = findViewById(R.id.list_view_clase_hiragana);
         Intent i=getIntent();

@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.crashlytics.android.Crashlytics;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 import org.json.JSONArray;
@@ -21,6 +22,8 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.concurrent.ExecutionException;
+
+import io.fabric.sdk.android.Fabric;
 
 import static com.example.bryan.minnanokanji.GlobalClass.URL_HOST;
 import static com.example.bryan.minnanokanji.GlobalClass.USER_LOGIN;
@@ -39,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         getSupportActionBar().setTitle("Iniciar Sesión");
+
+        Fabric.with(this, new Crashlytics());
+
+        // TODO: Move this to where you establish a user session
+        logUser();
+
 
         editTextEmail = findViewById(R.id.editTextMEmail);
         editTextPass  = findViewById(R.id.editTextMPass);
@@ -184,4 +193,18 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
+    public void forceCrash(View view) {
+        throw new RuntimeException("This is a crash");
+    }
+
+    private void logUser() {
+        // TODO: Use the current user's information
+        // You can call any combination of these three methods
+        //Crashlytics.setUserIdentifier("12345");
+        //Crashlytics.setUserEmail("user@fabric.io");
+        Crashlytics.setUserName("Ventana principal");
+    }
+
+
 }

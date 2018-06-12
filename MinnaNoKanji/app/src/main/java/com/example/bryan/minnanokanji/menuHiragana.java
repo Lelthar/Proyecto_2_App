@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.crashlytics.android.Crashlytics;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
 
 import org.json.JSONArray;
@@ -17,6 +18,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
+
+import io.fabric.sdk.android.Fabric;
 
 public class menuHiragana extends AppCompatActivity {
 
@@ -31,6 +34,8 @@ public class menuHiragana extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_hirahana);
         getSupportActionBar().setTitle("Hirahana ひらがな");
+
+        Fabric.with(this, new Crashlytics());
 
         mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
         mixpanel.track("Ventana de lecciones de Katakana",null); //Realiza la actividad de mixpanel

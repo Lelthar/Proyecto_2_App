@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.crashlytics.android.Crashlytics;
 import com.mixpanel.android.mpmetrics.MixpanelAPI;
+
+import io.fabric.sdk.android.Fabric;
 
 public class menuJapon extends AppCompatActivity {
     private MixpanelAPI mixpanel;
@@ -15,6 +18,7 @@ public class menuJapon extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_japon);
         getSupportActionBar().setTitle("Acerca de Japón");
+        Fabric.with(this, new Crashlytics());
         mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
         mixpanel.track("Ventana de Acerca de Japón",null); //Realiza la actividad de mixpanel
         mixpanel.flush();

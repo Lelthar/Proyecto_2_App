@@ -33,6 +33,7 @@ import com.amazonaws.mobileconnectors.s3.transferutility.TransferObserver;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferState;
 import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 import com.amazonaws.services.s3.AmazonS3Client;
+import com.crashlytics.android.Crashlytics;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -45,6 +46,8 @@ import java.net.URISyntaxException;
 import java.util.concurrent.ExecutionException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import io.fabric.sdk.android.Fabric;
 
 import static com.example.bryan.minnanokanji.GlobalClass.PATH_S3;
 import static com.example.bryan.minnanokanji.GlobalClass.URL_HOST;
@@ -88,6 +91,9 @@ public class ajustesCuenta extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ajustes_cuenta);
         getSupportActionBar().setTitle("Ajustes de Cuenta");
+
+        Fabric.with(this, new Crashlytics());
+
         AWSMobileClient.getInstance().initialize(this).execute();
         editTextCorreo = findViewById(R.id.editTextAEmail);
         editTextNombre = findViewById(R.id.editTextANick);
