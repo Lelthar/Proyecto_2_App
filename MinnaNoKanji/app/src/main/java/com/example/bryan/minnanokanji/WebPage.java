@@ -22,7 +22,7 @@ public class WebPage extends AppCompatActivity {
         setContentView(R.layout.activity_web_page);
 
         mixpanel = MixpanelAPI.getInstance(this,"4b4d6b196066ba9a609c13fb5a11360c");
-        mixpanel.track("Ventana de pagina web de la embajada de Japón",null); //Realiza la actividad de mixpanel
+        mixpanel.track("Ventana de página web de la embajada de Japón",null); //Realiza la actividad de mixpanel
         mixpanel.flush();
 
         web = findViewById(R.id.paginaJapon);
