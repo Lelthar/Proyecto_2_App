@@ -27,7 +27,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <Button
-                android:id="@+id/button12"
+                android:id="@+id/buttonIntro"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="#536dfe"
@@ -52,31 +52,28 @@
                 android:visibility="gone">
 
                 <Button
-                    android:id="@+id/button11"
+                    android:id="@+id/buttonLecc1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
-                    android:onClick="leccion"
                     android:text="Lección 1"
                     android:textAllCaps="false"
                     android:textSize="15sp" />
 
                 <Button
-                    android:id="@+id/button13"
+                    android:id="@+id/buttonLecc2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
-                    android:onClick="leccion"
                     android:text="Lección 2"
                     android:textAllCaps="false"
                     android:textSize="15sp" />
 
                 <Button
-                    android:id="@+id/button14"
+                    android:id="@+id/buttonLecc3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
-                    android:onClick="leccion"
                     android:text="Lección 3"
                     android:textAllCaps="false"
                     android:textSize="15sp" />
@@ -99,7 +96,7 @@
                 android:visibility="gone">
 
                 <Button
-                    android:id="@+id/button21"
+                    android:id="@+id/buttonLecc4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
@@ -110,7 +107,7 @@
                     android:textSize="15sp" />
 
                 <Button
-                    android:id="@+id/button23"
+                    android:id="@+id/buttonLecc5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
@@ -120,7 +117,7 @@
                     android:textSize="15sp" />
 
                 <Button
-                    android:id="@+id/button24"
+                    android:id="@+id/buttonLecc6"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
@@ -148,7 +145,7 @@
                 android:visibility="gone">
 
                 <Button
-                    android:id="@+id/button31"
+                    android:id="@+id/buttonLecc7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
@@ -159,7 +156,7 @@
                     android:textSize="15sp" />
 
                 <Button
-                    android:id="@+id/button33"
+                    android:id="@+id/buttonLecc8"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
@@ -169,7 +166,7 @@
                     android:textSize="15sp" />
 
                 <Button
-                    android:id="@+id/buttonRCamera"
+                    android:id="@+id/buttonLecc9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="#C5CAE9"
